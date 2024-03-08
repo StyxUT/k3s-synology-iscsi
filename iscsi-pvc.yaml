@@ -1,0 +1,13 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: test-claim-iscsi
+  annotations:
+    volume.beta.kubernetes.io/storage-class: "synology-iscsi-csi"
+spec:
+  storageClassName: synology-iscsi-csi
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
